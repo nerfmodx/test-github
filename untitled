@@ -1,0 +1,10 @@
+PS3="test: "
+select var in 1 2 3 exit
+do
+case #var in
+1) echo "test" ;;
+2) echo "test" ;;
+3) echo "test" ;;
+exit) exit ;;
+esac
+done
