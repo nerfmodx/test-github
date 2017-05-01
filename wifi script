@@ -32,17 +32,9 @@ elif [ $"inject" = "injecthtml" ]
 then 
 echo "html code to input here"
 read htmlinject
-
+echo "press crtl+c to close the spoofing/hack"
 bettercap $target --proxy-module $inject
-
-
-
-
-
-
-
-
-
+#################################################################################################################################
 aircracker)
 
 
