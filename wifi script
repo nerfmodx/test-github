@@ -1,0 +1,28 @@
+echo "this is my wifi hacking script..."
+sleep 3
+clear
+PS3="what wifi hack would you like to use today?: "
+select wifi in bettercap apcracker
+do
+case $wifi in
+bettercap)
+echo "would you like to import bettercap modules from github? Y/n"
+read choice1
+if [ $"choice1" = "Y"
+then
+cd /opt/
+git clone https://github.com/evilsocket/bettercap-proxy-modules
+else
+echo "your loss..."
+
+
+aircracker)
+
+
+
+
+
+
+
+esac
+done
