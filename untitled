@@ -2,10 +2,10 @@
 #continuing on to main script
 
 PS3="hacking script: "
-select var in 1 2 3 exit
+select var in metasploit 2 3 exit
 do
 case $var in
-1) echo "input command args for metasploit here, leave blank for none"
+metasploit) echo "input command args for metasploit here, leave blank for none"
 read msfargs
 msfconsole $msfargs ;;
 2) echo "test" ;;
