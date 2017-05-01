@@ -1,5 +1,5 @@
 echo "this is my wifi hacking script..."
-sleep 3
+sleep 3s
 clear
 PS3="what wifi hack would you like to use today?: "
 select wifi in bettercap apcracker
@@ -14,13 +14,36 @@ cd /opt/
 git clone https://github.com/evilsocket/bettercap-proxy-modules
 else
 echo "your loss..."
+sleep 3s
+clear
+echo "would you like to add a target? ad -T to add a target or leave blank for the whole network
+read target
+echo "what proxy module would you like to use? injectjs, injectcss, or injecthtml?
+read inject
+if [ $"injectjs = "injectjs ]
+then
+echo "input the js file link here"
+read injectjsurl
+elif [ $"inject" = "injectcss" ]
+then
+echo "path to the css file to inject"
+read csspath
+elif [ $"inject" = "injecthtml" ]
+then 
+echo "html code to input here"
+read htmlinject
+
+bettercap $target --proxy-module $inject
+
+
+
+
+
+
+
 
 
 aircracker)
-
-
-
-
 
 
 
