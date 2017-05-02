@@ -1,2 +1,2 @@
 # test-github
-This is a test to use with github android apps
+this is my collection of hacking scripts that i personally coded myself
