@@ -1,9 +1,10 @@
 #!bin/bash
+export TERM=xterm
 echo "this is my wifi hacking script..."
 sleep 3s
 clear
 PS3="what wifi hack would you like to use today?"
-select wifi in bettercap apcracker
+select wifi in bettercap apcracker 
 do
 case $wifi in
 bettercap)
