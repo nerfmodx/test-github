@@ -4,7 +4,7 @@ echo "this is my wifi hacking script..."
 sleep 3s
 clear
 PS3="what wifi hack would you like to use today?"
-select wifi in bettercap apcracker #add more options here#
+select wifi in bettercap apcracker honeypot apktool vulnscan
 do
 case $wifi in
 bettercap)
@@ -63,6 +63,8 @@ echo "router mac"
 read -r mac
 export mac
 xterm -e -hold aircrack-ng -w $"password" -b $"mac" ./*.pcap* ;;
-#add more options here#
+honeypot) ;;
+apktool ;;
+vulnscan ;;
 esac
 done
