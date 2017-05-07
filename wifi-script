@@ -64,7 +64,7 @@ read -r mac
 export mac
 xterm -e -hold aircrack-ng -w $"password" -b $"mac" ./*.pcap* ;;
 honeypot) ;;
-apktool ;;
-vulnscan ;;
+apktool) ;;
+vulnscan) ;;
 esac
 done
