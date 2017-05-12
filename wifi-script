@@ -13,10 +13,10 @@ read -r choice1
 export choice1
 if [ $"choice1" = "Y" ]
 then
-cd /opt/ || return
+cd /$home/Desktop/modules/ || return
 git clone https://github.com/evilsocket/bettercap-proxy-modules
 else
-echo "Your loss..."
+echo "you need to code your own then, or just spoof"
 fi
 sleep 3s
 clear
@@ -56,9 +56,9 @@ echo "writefile name"
 read -r writefile
 export writefile
 xterm -e -hold airodump-ng -c $"channel" -b $"bssid" wlan0mon -w $"writefile"
-echo "path to password list"
-read -r password
-export password
+#echo "path to password list"
+#read -r password
+#export password
 echo "router mac"
 read -r mac
 export mac
