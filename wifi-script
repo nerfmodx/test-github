@@ -1,9 +1,9 @@
 #!bin/bash
 export TERM=xterm
-echo "this is my wifi hacking script..."
+echo "This is my WiFi hacking script..."
 sleep 3s
 clear
-PS3="what wifi hack would you like to use today?"
+PS3="What WiFi hack would you like to use today?"
 select wifi in bettercap apcracker honeypot apktool vulnscan
 do
 case $wifi in
@@ -16,7 +16,7 @@ then
 cd /opt/ || return
 git clone https://github.com/evilsocket/bettercap-proxy-modules
 else
-echo "your loss..."
+echo "Your loss..."
 fi
 sleep 3s
 clear
